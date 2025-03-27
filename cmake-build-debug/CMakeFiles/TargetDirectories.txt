@@ -1,0 +1,3 @@
+/Users/adnan/CLionProjects/quotes-moubarac-snani-E/cmake-build-debug/CMakeFiles/quotes_moubarac_snani_E.dir
+/Users/adnan/CLionProjects/quotes-moubarac-snani-E/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/adnan/CLionProjects/quotes-moubarac-snani-E/cmake-build-debug/CMakeFiles/rebuild_cache.dir
