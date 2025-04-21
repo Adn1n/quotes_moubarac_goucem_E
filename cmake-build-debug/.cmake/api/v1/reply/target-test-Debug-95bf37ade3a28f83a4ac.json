@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "quotes_moubarac_snani_E"
+			"path" : "test"
 		}
 	],
 	"backtrace" : 1,
@@ -10,7 +10,8 @@
 	{
 		"commands" : 
 		[
-			"add_executable"
+			"add_executable",
+			"include_directories"
 		],
 		"files" : 
 		[
@@ -23,6 +24,12 @@
 			},
 			{
 				"command" : 0,
+				"file" : 0,
+				"line" : 11,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
 				"file" : 0,
 				"line" : 6,
 				"parent" : 0
@@ -38,6 +45,13 @@
 					"fragment" : "-g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics"
 				}
 			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/include"
+				}
+			],
 			"language" : "C",
 			"languageStandard" : 
 			{
@@ -49,11 +63,12 @@
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
-	"id" : "quotes_moubarac_snani_E::@6890427a1f51a3e7e1df",
+	"id" : "test::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -69,8 +84,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "quotes_moubarac_snani_E",
-	"nameOnDisk" : "quotes_moubarac_snani_E",
+	"name" : "test",
+	"nameOnDisk" : "test",
 	"paths" : 
 	{
 		"build" : ".",
@@ -82,7 +97,8 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
@@ -91,7 +107,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "main.c",
+			"path" : "tests/test_1.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/bmp8.c",
 			"sourceGroupIndex" : 0
 		}
 	],

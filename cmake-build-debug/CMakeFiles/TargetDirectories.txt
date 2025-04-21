@@ -1,3 +1,4 @@
-/Users/adnan/CLionProjects/quotes-moubarac-snani-E/cmake-build-debug/CMakeFiles/quotes_moubarac_snani_E.dir
-/Users/adnan/CLionProjects/quotes-moubarac-snani-E/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/adnan/CLionProjects/quotes-moubarac-snani-E/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/Main_projet.dir
+/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/test.dir
+/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/rebuild_cache.dir
