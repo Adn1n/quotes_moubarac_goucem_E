@@ -117,38 +117,102 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Main_projet
+# Target rules for targets named main
 
 # Build rule for target.
-Main_projet: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Main_projet
-.PHONY : Main_projet
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-Main_projet/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main_projet.dir/build.make CMakeFiles/Main_projet.dir/build
-.PHONY : Main_projet/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named test_8bits
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
-.PHONY : test
+test_8bits: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_8bits
+.PHONY : test_8bits
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+test_8bits/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_8bits.dir/build.make CMakeFiles/test_8bits.dir/build
+.PHONY : test_8bits/fast
+
+#=============================================================================
+# Target rules for targets named test_24bits
+
+# Build rule for target.
+test_24bits: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_24bits
+.PHONY : test_24bits
+
+# fast build rule for target.
+test_24bits/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_24bits.dir/build.make CMakeFiles/test_24bits.dir/build
+.PHONY : test_24bits/fast
+
+main.o: main.c.o
+.PHONY : main.o
+
+# target to build an object file
+main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.o
+.PHONY : main.c.o
+
+main.i: main.c.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.s
+.PHONY : main.c.s
+
+src/bmp24.o: src/bmp24.c.o
+.PHONY : src/bmp24.o
+
+# target to build an object file
+src/bmp24.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/bmp24.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_24bits.dir/build.make CMakeFiles/test_24bits.dir/src/bmp24.c.o
+.PHONY : src/bmp24.c.o
+
+src/bmp24.i: src/bmp24.c.i
+.PHONY : src/bmp24.i
+
+# target to preprocess a source file
+src/bmp24.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/bmp24.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_24bits.dir/build.make CMakeFiles/test_24bits.dir/src/bmp24.c.i
+.PHONY : src/bmp24.c.i
+
+src/bmp24.s: src/bmp24.c.s
+.PHONY : src/bmp24.s
+
+# target to generate assembly for a file
+src/bmp24.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/bmp24.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_24bits.dir/build.make CMakeFiles/test_24bits.dir/src/bmp24.c.s
+.PHONY : src/bmp24.c.s
 
 src/bmp8.o: src/bmp8.c.o
 .PHONY : src/bmp8.o
 
 # target to build an object file
 src/bmp8.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main_projet.dir/build.make CMakeFiles/Main_projet.dir/src/bmp8.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bmp8.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/bmp8.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_8bits.dir/build.make CMakeFiles/test_8bits.dir/src/bmp8.c.o
 .PHONY : src/bmp8.c.o
 
 src/bmp8.i: src/bmp8.c.i
@@ -156,8 +220,8 @@ src/bmp8.i: src/bmp8.c.i
 
 # target to preprocess a source file
 src/bmp8.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main_projet.dir/build.make CMakeFiles/Main_projet.dir/src/bmp8.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bmp8.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/bmp8.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_8bits.dir/build.make CMakeFiles/test_8bits.dir/src/bmp8.c.i
 .PHONY : src/bmp8.c.i
 
 src/bmp8.s: src/bmp8.c.s
@@ -165,57 +229,57 @@ src/bmp8.s: src/bmp8.c.s
 
 # target to generate assembly for a file
 src/bmp8.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main_projet.dir/build.make CMakeFiles/Main_projet.dir/src/bmp8.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/bmp8.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/bmp8.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_8bits.dir/build.make CMakeFiles/test_8bits.dir/src/bmp8.c.s
 .PHONY : src/bmp8.c.s
 
-src/main.o: src/main.c.o
-.PHONY : src/main.o
+tests/test_24bit.o: tests/test_24bit.c.o
+.PHONY : tests/test_24bit.o
 
 # target to build an object file
-src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main_projet.dir/build.make CMakeFiles/Main_projet.dir/src/main.c.o
-.PHONY : src/main.c.o
+tests/test_24bit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_24bits.dir/build.make CMakeFiles/test_24bits.dir/tests/test_24bit.c.o
+.PHONY : tests/test_24bit.c.o
 
-src/main.i: src/main.c.i
-.PHONY : src/main.i
+tests/test_24bit.i: tests/test_24bit.c.i
+.PHONY : tests/test_24bit.i
 
 # target to preprocess a source file
-src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main_projet.dir/build.make CMakeFiles/Main_projet.dir/src/main.c.i
-.PHONY : src/main.c.i
+tests/test_24bit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_24bits.dir/build.make CMakeFiles/test_24bits.dir/tests/test_24bit.c.i
+.PHONY : tests/test_24bit.c.i
 
-src/main.s: src/main.c.s
-.PHONY : src/main.s
+tests/test_24bit.s: tests/test_24bit.c.s
+.PHONY : tests/test_24bit.s
 
 # target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main_projet.dir/build.make CMakeFiles/Main_projet.dir/src/main.c.s
-.PHONY : src/main.c.s
+tests/test_24bit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_24bits.dir/build.make CMakeFiles/test_24bits.dir/tests/test_24bit.c.s
+.PHONY : tests/test_24bit.c.s
 
-tests/test_1.o: tests/test_1.c.o
-.PHONY : tests/test_1.o
+tests/test_8bit.o: tests/test_8bit.c.o
+.PHONY : tests/test_8bit.o
 
 # target to build an object file
-tests/test_1.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_1.c.o
-.PHONY : tests/test_1.c.o
+tests/test_8bit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_8bits.dir/build.make CMakeFiles/test_8bits.dir/tests/test_8bit.c.o
+.PHONY : tests/test_8bit.c.o
 
-tests/test_1.i: tests/test_1.c.i
-.PHONY : tests/test_1.i
+tests/test_8bit.i: tests/test_8bit.c.i
+.PHONY : tests/test_8bit.i
 
 # target to preprocess a source file
-tests/test_1.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_1.c.i
-.PHONY : tests/test_1.c.i
+tests/test_8bit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_8bits.dir/build.make CMakeFiles/test_8bits.dir/tests/test_8bit.c.i
+.PHONY : tests/test_8bit.c.i
 
-tests/test_1.s: tests/test_1.c.s
-.PHONY : tests/test_1.s
+tests/test_8bit.s: tests/test_8bit.c.s
+.PHONY : tests/test_8bit.s
 
 # target to generate assembly for a file
-tests/test_1.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test_1.c.s
-.PHONY : tests/test_1.c.s
+tests/test_8bit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_8bits.dir/build.make CMakeFiles/test_8bits.dir/tests/test_8bit.c.s
+.PHONY : tests/test_8bit.c.s
 
 # Help Target
 help:
@@ -225,17 +289,24 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Main_projet"
-	@echo "... test"
+	@echo "... main"
+	@echo "... test_24bits"
+	@echo "... test_8bits"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... src/bmp24.o"
+	@echo "... src/bmp24.i"
+	@echo "... src/bmp24.s"
 	@echo "... src/bmp8.o"
 	@echo "... src/bmp8.i"
 	@echo "... src/bmp8.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... tests/test_1.o"
-	@echo "... tests/test_1.i"
-	@echo "... tests/test_1.s"
+	@echo "... tests/test_24bit.o"
+	@echo "... tests/test_24bit.i"
+	@echo "... tests/test_24bit.s"
+	@echo "... tests/test_8bit.o"
+	@echo "... tests/test_8bit.i"
+	@echo "... tests/test_8bit.s"
 .PHONY : help
 
 

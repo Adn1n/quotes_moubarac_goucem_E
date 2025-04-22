@@ -49,7 +49,7 @@ typedef enum {
 
 int choixFilter(FilterType type);
 
-float ** getKernel(FilterType type);
+float ** getKernel(FilterType type, int * kernelSize);
 
 void bmp8_applyFilter(t_bmp8 * img, float ** kernel, int kernelSize);
 
