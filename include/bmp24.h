@@ -1,6 +1,7 @@
 //
 // Created by Adnan Moubarac on 22/04/2025.
 //
+#include <stdio.h>
 #include <stdint.h>
 
 #ifndef BMP24_H
@@ -79,6 +80,21 @@ void bmp24_freeDataPixels (t_pixel ** pixels, int height);
 t_bmp24 * bmp24_allocate (int width, int height, int colorDepth);
 
 void bmp24_free (t_bmp24 * img);
+
+
+
+t_bmp24 * bmp24_loadImage (const char * filename);
+
+void bmp24_saveImage (t_bmp24 * img, const char * filename);
+
+void file_rawRead (uint32_t position, void * buffer, uint32_t size, size_t n, FILE * file);
+
+void file_rawWrite (uint32_t position, void * buffer, uint32_t size, size_t n, FILE * file);
+
+void bmp24_readPixelValue (t_bmp24 * image, int x, int y, FILE * file);
+void bmp24_readPixelData (t_bmp24 * image, FILE * file);
+void bmp24_writePixelValue (t_bmp24 * image, int x, int y, FILE * file);
+void bmp24_writePixelData (t_bmp24 * image, FILE * file);
 
 
 #endif //BMP24_H

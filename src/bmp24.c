@@ -60,4 +60,61 @@ void bmp24_free (t_bmp24 * bmp24) {
     }
 }
 
+void file_rawRead (uint32_t position, void * buffer, uint32_t size, size_t n, FILE * file) {
+    fseek(file, position, SEEK_SET);
+    fread(buffer, size, n, file);
+}
+
+void file_rawWrite (uint32_t position, void * buffer, uint32_t size, size_t n, FILE * file) {
+    fseek(file, position, SEEK_SET);
+    fwrite(buffer, size, n, file);
+}
+
+t_bmp24 * bmp24_loadImage (const char * filename) {
+    FILE * file = fopen(filename, "rb");
+
+    t_bmp24 *image = malloc(sizeof(t_bmp24));
+    if (image == NULL) {
+        printf("Erreur : allocation \n");
+        fclose(file);
+        return NULL;
+    }
+
+    int width = image->header_info.width;
+    int height = image->header_info.height;
+    int colorDepth = image -> colorDepth;
+
+    free(image);
+    image = bmp24_allocate(width, height,colorDepth);
+    if (image == NULL) {
+        printf("Erreur : allocation \n");
+        fclose(file);
+        return NULL;
+    }
+
+    file_rawRead(BITMAP_MAGIC, &image->header, sizeof(t_bmp_header), 1, file);
+    file_rawRead(HEADER_SIZE, &image->header_info, sizeof(t_bmp_info), 1, file);
+
+    bmp24_readPixelData(image,file);
+
+    fclose(file);
+    return image;
+
+}
+
+void bmp24_saveImage(t_bmp24 * bmp24, const char * filename) {
+    FILE * file = fopen(filename, "wb");
+    if (file == NULL) {
+        printf("Erreur : ouverture du fichier \n");
+        fclose(file);
+        return;
+    }
+    file_rawWrite(BITMAP_MAGIC, &bmp24->header, sizeof(t_bmp_header), 1, file);
+    file_rawWrite(HEADER_SIZE, &bmp24->header_info, sizeof(t_bmp_info), 1, file);
+
+    bmp24_writePixelData(bmp24,file);
+    fclose(file);
+
+}
+
 
