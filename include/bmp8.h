@@ -33,6 +33,24 @@ void bmp8_negative(t_bmp8 * img);
 
 void bmp8_brightness(t_bmp8 * img, int value);
 
+
 void bmp8_threshold(t_bmp8 * img, int threshold);
+
+
+
+
+typedef enum {
+    box_blur = 1,
+    gaussian_blur = 2,
+    outline = 3,
+    emboss = 4,
+    sharpen = 5
+} FilterType;
+
+int choixFilter(FilterType type);
+
+float ** getKernel(FilterType type);
+
+void bmp8_applyFilter(t_bmp8 * img, float ** kernel, int kernelSize);
 
 #endif //BMP8_H

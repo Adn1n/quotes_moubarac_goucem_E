@@ -6,6 +6,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
 
 // Charge une image BMP 8 bits depuis un fichier et retourne un pointeur vers la structure t_bmp8.
 t_bmp8 * bmp8_loadImage(const char * filename) {
@@ -96,6 +98,7 @@ void bmp8_brightness(t_bmp8 * img, int value) {
     }
 }
 
+// Applique un seuillage binaire à l'image : pixels >= seuil → blanc (255), sinon noir (0).
 void bmp8_threshold(t_bmp8 * img, int threshold) {
 
     // Vérification de threshold
@@ -110,6 +113,85 @@ void bmp8_threshold(t_bmp8 * img, int threshold) {
         else
             img -> data[i] = 0;
     }
+}
+
+int choixFilter(FilterType type){
+
+    char input[50];
+    bool verif_saisie = false;
+
+    printf(" Veuillez choisir un type de filtre parmis les suivants : \n");
+    printf("\t 1.box_blur \n");
+    printf("\t 2.gaussian_blur \n");
+    printf("\t 3.outline \n");
+    printf("\t 4.emboss \n");
+    printf("\t 5.sharpen \n");
+
+    printf("Votre choix : ");
+
+
+    do {
+        fgets(input, 50, stdin);
+        input[strcspn(input, "\n")] = 0;  // Supprimer le retour à la ligne
+
+        if (strcmp(input, "box_blur") == 0  || strcmp(input, "1") == 0 || strcmp(input, "1.box_blur") == 0 ){
+            type = box_blur;
+            verif_saisie = true;
+        }
+        else if (strcmp(input,"gaussian_blur") == 0 || strcmp(input,"2") == 0 || strcmp(input,"2.gaussian_blur") == 0 ) {
+            type = gaussian_blur;
+            verif_saisie = true;
+        }
+        else if (strcmp(input,"outline") == 0 || strcmp(input,"3") == 0 || strcmp(input,"3.outline") == 0 ) {
+            type = outline;
+            verif_saisie = true;
+        }
+        else if (strcmp(input,"emboss") == 0 || strcmp(input,"4") == 0 || strcmp(input,"4.emboss") == 0 ) {
+            type = emboss;
+            verif_saisie = true;
+        }
+        else if ( strcmp(input,"sharpen") == 0 || strcmp(input,"5") == 0  || strcmp(input,"5.sharpen")==0) {
+            type = sharpen;
+            verif_saisie = true;
+        }
+        else {
+            printf("Votre choix est incorrect \n");
+        }
+
+        if (! verif_saisie ) {
+            printf("Veuillez resaisir un choix :");
+        }
+
+    }while (!verif_saisie);
+
+    return type;
+}
+
+float ** getKernel(FilterType type, int * kernelSize){
+
+    if ((*kernelSize % 2) != 1) {
+        printf("Taille incorect");
+        return NULL;
+    }
+
+    if (type == box_blur) {
+
+    }
+
+}
+
+void bmp8_applyFilter(t_bmp8 * img, float ** kernel, int kernelSize) {
+    unsigned char *newData = malloc(img->dataSize);
+    int offset = kernelSize / 2;
+
+
+    for (int x = 1; x < img -> width - 2; x++) {
+        for (int y = 1; y < img -> height - 2; y++) {
+
+        }
+
+    }
+
 }
 
 
