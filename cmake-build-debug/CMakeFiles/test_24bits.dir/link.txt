@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/cc -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_24bits.dir/tests/test_24bit.c.o CMakeFiles/test_24bits.dir/src/bmp24.c.o -o test_24bits
+/usr/bin/clang -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_24bits.dir/tests/test_24bit.c.o CMakeFiles/test_24bits.dir/src/bmp24.c.o -o test_24bits

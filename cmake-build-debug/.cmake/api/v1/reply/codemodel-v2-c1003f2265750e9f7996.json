@@ -43,21 +43,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "main::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-main-Debug-35dc0d1561e7e2e366c2.json",
+					"jsonFile" : "target-main-Debug-648839ec1c78f813dbb5.json",
 					"name" : "main",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test_24bits::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_24bits-Debug-d209dbc92e61a5823e1a.json",
+					"jsonFile" : "target-test_24bits-Debug-b3acfa7d804fb259b4f4.json",
 					"name" : "test_24bits",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test_8bits::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_8bits-Debug-1d3890da4be4da2b6384.json",
+					"jsonFile" : "target-test_8bits-Debug-f74ee4669fc45df0a418.json",
 					"name" : "test_8bits",
 					"projectIndex" : 0
 				}
@@ -67,8 +67,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug",
-		"source" : "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E"
+		"build" : "/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug",
+		"source" : "/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E"
 	},
 	"version" : 
 	{

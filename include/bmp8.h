@@ -1,6 +1,6 @@
 //
 // Created by Adnan Moubarac on 18/04/2025.
-//
+////
 // FICHIER HEADER
 //
 // Définition structures, types, et prototypes de fonctions.

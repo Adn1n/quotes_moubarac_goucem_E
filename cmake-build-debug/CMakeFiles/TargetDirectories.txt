@@ -1,5 +1,5 @@
-/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/main.dir
-/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/test_8bits.dir
-/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/test_24bits.dir
-/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/main.dir
+/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/test_8bits.dir
+/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/test_24bits.dir
+/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -31,7 +31,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/usr/bin/ar"
+			"value" : "/usr/bin/ar"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug"
+			"value" : "/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -142,6 +142,18 @@
 			"value" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/ctest"
 		},
 		{
+			"name" : "CMAKE_CXX_COMPILER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : "/usr/bin/clang++"
+		},
+		{
 			"name" : "CMAKE_C_COMPILER",
 			"properties" : 
 			[
@@ -154,8 +166,8 @@
 					"value" : "C compiler"
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/usr/bin/cc"
+			"type" : "STRING",
+			"value" : "/usr/bin/clang"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -383,7 +395,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -443,7 +455,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E"
+			"value" : "/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -487,7 +499,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/usr/bin/ld"
+			"value" : "/usr/bin/ld"
 		},
 		{
 			"name" : "CMAKE_MAKE_PROGRAM",
@@ -599,7 +611,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/usr/bin/nm"
+			"value" : "/usr/bin/nm"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -643,7 +655,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/usr/bin/objdump"
+			"value" : "/usr/bin/objdump"
 		},
 		{
 			"name" : "CMAKE_OSX_ARCHITECTURES",
@@ -679,7 +691,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -743,7 +755,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/usr/bin/ranlib"
+			"value" : "/usr/bin/ranlib"
 		},
 		{
 			"name" : "CMAKE_READELF",
@@ -979,7 +991,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/usr/bin/strip"
+			"value" : "/usr/bin/strip"
 		},
 		{
 			"name" : "CMAKE_TAPI",
@@ -1035,7 +1047,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug"
+			"value" : "/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug"
 		},
 		{
 			"name" : "quotes_moubarac_snani_E_IS_TOP_LEVEL",
@@ -1059,7 +1071,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E"
+			"value" : "/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E"
 		}
 	],
 	"kind" : "cache",
