@@ -11,7 +11,6 @@
 // Définitions des constantes //
 
 //
-////////
 
 // Définitions des structures //
 typedef struct {
