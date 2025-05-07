@@ -32,7 +32,7 @@ typedef enum {
 } FilterType;
 
 
-/// Prototypes des fonctions ///
+/// Prototypes des fonctions //
 
 t_bmp8 * bmp8_loadImage(const char * filename);
 
@@ -54,4 +54,4 @@ float ** getKernel(FilterType type, int * kernelSize);
 
 void bmp8_applyFilter(t_bmp8 * img, float ** kernel, int kernelSize);
 
-#endif //BMP8_H
+#endif //BMP8_H //
