@@ -54,4 +54,4 @@ float ** getKernel(FilterType type, int * kernelSize);
 
 void bmp8_applyFilter(t_bmp8 * img, float ** kernel, int kernelSize);
 
-#endif //BMP8_H //
+#endif //BMP8_H
