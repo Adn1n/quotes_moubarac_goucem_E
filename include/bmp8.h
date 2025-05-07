@@ -1,6 +1,4 @@
-//
-// Created by Adnan Moubarac on 18/04/2025.
-////
+///
 // FICHIER HEADER
 //
 // Définition structures, types, et prototypes de fonctions.
@@ -10,7 +8,7 @@
 
 // Définitions des constantes //
 
-//
+
 
 // Définitions des structures //
 typedef struct {
@@ -34,7 +32,7 @@ typedef enum {
 } FilterType;
 
 
-// Prototypes des fonctions //
+/// Prototypes des fonctions ///
 
 t_bmp8 * bmp8_loadImage(const char * filename);
 
