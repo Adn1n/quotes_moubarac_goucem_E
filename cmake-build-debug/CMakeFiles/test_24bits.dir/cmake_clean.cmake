@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/test_24bits.dir/src/bmp24.c.o.d"
   "CMakeFiles/test_24bits.dir/tests/test_24bit.c.o"
   "CMakeFiles/test_24bits.dir/tests/test_24bit.c.o.d"
+  "CMakeFiles/test_24bits.dir/utils.c.o"
+  "CMakeFiles/test_24bits.dir/utils.c.o.d"
   "test_24bits"
   "test_24bits.pdb"
 )

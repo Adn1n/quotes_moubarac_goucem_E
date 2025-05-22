@@ -24,7 +24,7 @@ t_bmp8 * bmp8_loadImage(const char * filename) {
     t_bmp8 * p_img = malloc(sizeof(t_bmp8));
     if (!p_img) {
         // Affiche une erreur si l'allocation échoue
-        printf("Could not allocate memory for the image\n");
+        printf("Impossible d'allouer de la mémoire pour l'image\n");
         fclose(file); // On ferme le fichier si on ne peut pas allouer
         return NULL;
     }
@@ -40,6 +40,9 @@ t_bmp8 * bmp8_loadImage(const char * filename) {
     p_img->colorDepth = *(unsigned int *)&p_img->header[28];
     // Récupère la taille des données de l'image à partir du header BMP
     p_img->dataSize = *(unsigned int *)&p_img->header[34];
+    if (p_img->dataSize == 0) {
+        p_img->dataSize = p_img->width * p_img->height;
+    }
 
     // Lit la table de couleurs (palette) de 1024 octets
     fread(p_img->colorTable, sizeof(unsigned char), 1024, file);
@@ -48,7 +51,7 @@ t_bmp8 * bmp8_loadImage(const char * filename) {
     p_img->data = malloc(sizeof(unsigned char) * p_img->dataSize);
     if (!p_img->data) {
         // Affiche une erreur si l'allocation échoue
-        printf("Could not allocate memory for image data\n");
+        printf("Impossible d'allouer de la mémoire pour les données de l'image\n");
         free(p_img);
         fclose(file);
         return NULL;

@@ -53,10 +53,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E
+CMAKE_SOURCE_DIR = /Users/adnan/CLionProjects/quotes_moubarac_goucem_E
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -70,52 +70,67 @@ include CMakeFiles/main.dir/progress.make
 include CMakeFiles/main.dir/flags.make
 
 CMakeFiles/main.dir/main.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/main.c.o: /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/main.c
+CMakeFiles/main.dir/main.c.o: /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/main.c
 CMakeFiles/main.dir/main.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/main.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/main.c.o -MF CMakeFiles/main.dir/main.c.o.d -o CMakeFiles/main.dir/main.c.o -c /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/main.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/main.c.o -MF CMakeFiles/main.dir/main.c.o.d -o CMakeFiles/main.dir/main.c.o -c /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/main.c
 
 CMakeFiles/main.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/main.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/main.c > CMakeFiles/main.dir/main.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/main.c > CMakeFiles/main.dir/main.c.i
 
 CMakeFiles/main.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/main.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/main.c -o CMakeFiles/main.dir/main.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/main.c -o CMakeFiles/main.dir/main.c.s
 
 CMakeFiles/main.dir/src/bmp8.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/bmp8.c.o: /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/src/bmp8.c
+CMakeFiles/main.dir/src/bmp8.c.o: /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/src/bmp8.c
 CMakeFiles/main.dir/src/bmp8.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/src/bmp8.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/bmp8.c.o -MF CMakeFiles/main.dir/src/bmp8.c.o.d -o CMakeFiles/main.dir/src/bmp8.c.o -c /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/src/bmp8.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/src/bmp8.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/bmp8.c.o -MF CMakeFiles/main.dir/src/bmp8.c.o.d -o CMakeFiles/main.dir/src/bmp8.c.o -c /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/src/bmp8.c
 
 CMakeFiles/main.dir/src/bmp8.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/src/bmp8.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/src/bmp8.c > CMakeFiles/main.dir/src/bmp8.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/src/bmp8.c > CMakeFiles/main.dir/src/bmp8.c.i
 
 CMakeFiles/main.dir/src/bmp8.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/src/bmp8.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/src/bmp8.c -o CMakeFiles/main.dir/src/bmp8.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/src/bmp8.c -o CMakeFiles/main.dir/src/bmp8.c.s
 
 CMakeFiles/main.dir/src/bmp24.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/bmp24.c.o: /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/src/bmp24.c
+CMakeFiles/main.dir/src/bmp24.c.o: /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/src/bmp24.c
 CMakeFiles/main.dir/src/bmp24.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/src/bmp24.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/bmp24.c.o -MF CMakeFiles/main.dir/src/bmp24.c.o.d -o CMakeFiles/main.dir/src/bmp24.c.o -c /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/src/bmp24.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/src/bmp24.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/bmp24.c.o -MF CMakeFiles/main.dir/src/bmp24.c.o.d -o CMakeFiles/main.dir/src/bmp24.c.o -c /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/src/bmp24.c
 
 CMakeFiles/main.dir/src/bmp24.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/src/bmp24.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/src/bmp24.c > CMakeFiles/main.dir/src/bmp24.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/src/bmp24.c > CMakeFiles/main.dir/src/bmp24.c.i
 
 CMakeFiles/main.dir/src/bmp24.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/src/bmp24.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/src/bmp24.c -o CMakeFiles/main.dir/src/bmp24.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/src/bmp24.c -o CMakeFiles/main.dir/src/bmp24.c.s
+
+CMakeFiles/main.dir/utils.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/utils.c.o: /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/utils.c
+CMakeFiles/main.dir/utils.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/main.dir/utils.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/utils.c.o -MF CMakeFiles/main.dir/utils.c.o.d -o CMakeFiles/main.dir/utils.c.o -c /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/utils.c
+
+CMakeFiles/main.dir/utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/utils.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/utils.c > CMakeFiles/main.dir/utils.c.i
+
+CMakeFiles/main.dir/utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/utils.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/utils.c -o CMakeFiles/main.dir/utils.c.s
 
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/main.c.o" \
 "CMakeFiles/main.dir/src/bmp8.c.o" \
-"CMakeFiles/main.dir/src/bmp24.c.o"
+"CMakeFiles/main.dir/src/bmp24.c.o" \
+"CMakeFiles/main.dir/utils.c.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
@@ -123,9 +138,10 @@ main_EXTERNAL_OBJECTS =
 main: CMakeFiles/main.dir/main.c.o
 main: CMakeFiles/main.dir/src/bmp8.c.o
 main: CMakeFiles/main.dir/src/bmp24.c.o
+main: CMakeFiles/main.dir/utils.c.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -137,6 +153,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	cd /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/main.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/adnan/CLionProjects/quotes_moubarac_goucem_E /Users/adnan/CLionProjects/quotes_moubarac_goucem_E /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles/main.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/main.dir/depend
 

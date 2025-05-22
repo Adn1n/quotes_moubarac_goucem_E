@@ -57,10 +57,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E
+CMAKE_SOURCE_DIR = /Users/adnan/CLionProjects/quotes_moubarac_goucem_E
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cyliagoucem/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -281,6 +281,36 @@ tests/test_8bit.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_8bits.dir/build.make CMakeFiles/test_8bits.dir/tests/test_8bit.c.s
 .PHONY : tests/test_8bit.c.s
 
+utils.o: utils.c.o
+.PHONY : utils.o
+
+# target to build an object file
+utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/utils.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_8bits.dir/build.make CMakeFiles/test_8bits.dir/utils.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_24bits.dir/build.make CMakeFiles/test_24bits.dir/utils.c.o
+.PHONY : utils.c.o
+
+utils.i: utils.c.i
+.PHONY : utils.i
+
+# target to preprocess a source file
+utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/utils.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_8bits.dir/build.make CMakeFiles/test_8bits.dir/utils.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_24bits.dir/build.make CMakeFiles/test_24bits.dir/utils.c.i
+.PHONY : utils.c.i
+
+utils.s: utils.c.s
+.PHONY : utils.s
+
+# target to generate assembly for a file
+utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/utils.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_8bits.dir/build.make CMakeFiles/test_8bits.dir/utils.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_24bits.dir/build.make CMakeFiles/test_24bits.dir/utils.c.s
+.PHONY : utils.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -307,6 +337,9 @@ help:
 	@echo "... tests/test_8bit.o"
 	@echo "... tests/test_8bit.i"
 	@echo "... tests/test_8bit.s"
+	@echo "... utils.o"
+	@echo "... utils.i"
+	@echo "... utils.s"
 .PHONY : help
 
 
