@@ -44,4 +44,8 @@ void bmp8_threshold(t_bmp8 * img, int threshold);
 
 void bmp8_applyFilter(t_bmp8 * img, float ** kernel, int kernelSize);
 
+t_bmp8 *bmp8_allocate(int width, int height, int colorDepth);
+
+t_bmp8 *bmp8_copyImage(t_bmp8 *src);
+
 #endif //BMP8_H

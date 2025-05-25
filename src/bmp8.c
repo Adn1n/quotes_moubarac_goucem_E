@@ -95,7 +95,6 @@ void bmp8_saveImage(const char * filename, t_bmp8 * img) {
     if (fwrite(img->data, sizeof(unsigned char), img->dataSize, file) != img->dataSize) {
         printf("Erreur lors de l'écriture des données de l'image.\n");
     }
-
     // Ferme le fichier
     fclose(file);
 }
@@ -160,7 +159,7 @@ void bmp8_brightness(t_bmp8 * img, int value) {
 }
 
 
-// Applique un seuillage binaire à l'image : pixels >= seuil → blanc (255), sinon noir (0).
+// Applique un seuillage binaire à l'image
 void bmp8_threshold(t_bmp8 * img, int threshold) {
     // S'assure que le seuil est compris entre 0 et 255
     if (threshold < 0)
@@ -183,13 +182,6 @@ void bmp8_threshold(t_bmp8 * img, int threshold) {
 
 
 
-
-
-
-
-
-
-
 // Applique un filtre de convolution à une image BMP 8 bits.
 void bmp8_applyFilter(t_bmp8 * img, float ** kernel, int kernelSize ) {
     // Alloue un nouveau tableau pour stocker les pixels filtrés
@@ -199,8 +191,8 @@ void bmp8_applyFilter(t_bmp8 * img, float ** kernel, int kernelSize ) {
     int width = img->width;
     int height = img->height;
 
-    // Décale pour parcourir les voisins autour du pixel central (noyau 3x3 → offset = 1)
-    int offset = kernelSize / 2;
+    // Décale pour parcourir les voisins autour du pixel central
+    int offset = kernelSize / 2; // (noyau 3x3 → offset = 1)
 
     // Parcourt les pixels internes (en ignorant les bords)
     for (int y = 1; y < height - 1; y++) {
@@ -223,7 +215,6 @@ void bmp8_applyFilter(t_bmp8 * img, float ** kernel, int kernelSize ) {
 
                     // Ajoute le produit pondéré à la somme
                     sum += value * coefficient;
-                    printf("Pixel (%d,%d) -> %.2f\n", x, y, sum);
                 }
             }
 
@@ -246,5 +237,47 @@ void bmp8_applyFilter(t_bmp8 * img, float ** kernel, int kernelSize ) {
 
 }
 
+t_bmp8 *bmp8_allocate(int width, int height, int colorDepth) {
+    t_bmp8 *img = malloc(sizeof(t_bmp8));
+    if (!img) return NULL;
 
+    img->width = width;
+    img->height = height;
+    img->colorDepth = colorDepth;
+    img->dataSize = width * height;
+
+    img->data = malloc(sizeof(unsigned char) * img->dataSize);
+    if (!img->data) {
+        free(img);
+        return NULL;
+    }
+
+    // Initialise le header et la palette à zéro (si besoin)
+    memset(img->header, 0, 54);
+    memset(img->colorTable, 0, 1024);
+
+    return img;
+}
+
+
+t_bmp8 *bmp8_copyImage(t_bmp8 *src) {
+    if (!src) return NULL;
+
+    t_bmp8 *copy = bmp8_allocate(src->width, src->height, src->colorDepth);
+    if (!copy) return NULL;
+
+    // Copie les données pixel par pixel (format 1D)
+    for (int y = 0; y < src->height; y++) {
+        for (int x = 0; x < src->width; x++) {
+            int index = y * src->width + x;
+            copy->data[index] = src->data[index];
+        }
+    }
+
+    // Copie aussi le header et la palette pour être complet
+    memcpy(copy->header, src->header, 54);
+    memcpy(copy->colorTable, src->colorTable, 1024);
+
+    return copy;
+}
 

@@ -152,8 +152,6 @@ void bmp24_readPixelData (t_bmp24 * image, FILE * file) {
 
         }
     }
-
-
 }
 
 void bmp24_writePixelValue (t_bmp24 * image, int x, int y, FILE * file) {
@@ -258,7 +256,6 @@ void bmp24_printInfo(t_bmp24 *img){
 
 }
 
-
 t_pixel bmp24_convolution(t_bmp24 *img, int x, int y, float **kernel, int kernelSize) {
     int offset = kernelSize / 2;
     float r = 0, g = 0, b = 0;
@@ -290,8 +287,26 @@ t_pixel bmp24_convolution(t_bmp24 *img, int x, int y, float **kernel, int kernel
     out.green = (uint8_t)g;
     out.blue = (uint8_t)b;
 
-    if (x == 0 && y == 0) {
-        printf("Sharpen R=%f G=%f B=%f → ", r, g, b);
-    }
     return out;
 }
+
+t_bmp24 *bmp24_copyImage(t_bmp24 *src) {
+    if (!src) return NULL;
+
+    t_bmp24 *copy = bmp24_allocate(src->width, src->height, src->colorDepth);
+    if (!copy) return NULL;
+
+    // Copie les pixels
+    for (int y = 0; y < src->height; y++) {
+        for (int x = 0; x < src->width; x++) {
+            copy->data[y][x] = src->data[y][x];
+        }
+    }
+
+    // Copie aussi les headers
+    copy->header = src->header;
+    copy->header_info = src->header_info;
+
+    return copy;
+}
+

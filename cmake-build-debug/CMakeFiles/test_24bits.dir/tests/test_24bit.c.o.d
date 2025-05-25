@@ -1,6 +1,8 @@
 CMakeFiles/test_24bits.dir/tests/test_24bit.c.o: \
   /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/tests/test_24bit.c \
   /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/include/utils.h \
+  /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/include/histogramme.h \
+  /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/include/bmp8.h \
   /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/include/bmp24.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/_stdio.h \

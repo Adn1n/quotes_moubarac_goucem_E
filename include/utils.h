@@ -14,6 +14,7 @@ typedef enum {
     sharpen = 5
 } FilterType;
 
+// Prototypes de fonctions //
 void openImageFile(const char *filename);
 
 int choixFilter(FilterType type);

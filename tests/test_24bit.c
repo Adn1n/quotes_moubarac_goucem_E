@@ -2,7 +2,8 @@
 // Created by Adnan Moubarac on 22/04/2025.
 //
 #include "utils.h"
-#include <bmp24.h>
+#include "histogramme.h"
+#include "bmp24.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -17,8 +18,10 @@ int main() {
         printf("Erreur lors du chargement de l'image.\n");
         return 1;
     }
+    t_bmp24 *img_original = bmp24_copyImage(img);
+    int premiere_ouverture = 1;
 
-     int choix;
+    int choix;
     do {
         printf("\n===== MENU =====\n");
         printf("1. Afficher les informations de l'image\n");
@@ -26,8 +29,11 @@ int main() {
         printf("3. Modifier la luminosité\n");
         printf("4. Appliquer un seuillage\n");
         printf("5. Concertir l'image en niveau gris\n");
-        printf("6. Sauvegarder l'image\n");
-        printf("7. Ouvrir l'image\n");
+        printf("6. Appliquer filtre convultion\n");
+        printf("7. Appliquer une égalisation d'histogramme\n");
+        printf("8. Sauvegarder l'image\n");
+        printf("9. Ouvrir l'image\n");
+        printf("10. Restaurer l'image originale\n");
         printf("0. Quitter\n");
         printf("Votre choix : ");
         scanf("%d", &choix);
@@ -74,17 +80,7 @@ int main() {
             }
 
             case 6: {
-                char savePath[100];
-                printf("Nom du fichier de sortie : ");
-                scanf("%s", savePath);
-                bmp24_saveImage(img, savePath);
-                printf("Image sauvegardée.\n");
-                break;
-            }
-            case 7:
-                openImageFile(cheminSauvegarde);
-                break;
-            case 8 : {
+
                 FilterType type;
                 type = choixFilter(type); // Demande à l'utilisateur quel filtre appliquer
                 int taille = 3;
@@ -120,6 +116,38 @@ int main() {
                 }
                 break;
             }
+            case 7:
+                bmp24_equalize(img);
+                bmp24_saveImage(img, cheminSauvegarde);
+                openImageFile(cheminSauvegarde);
+                printf("Image 24 bits égalisée.\n");
+                break;
+            case 8 : {
+                char savePath[100];
+                printf("Nom du fichier de sortie : ");
+                scanf("%s", savePath);
+                bmp24_saveImage(img, savePath);
+                printf("Image sauvegardée.\n");
+                break;
+            }
+            case 9 : {
+                if (premiere_ouverture) {
+                    openImageFile(chemin); // ouvre l’image originale une seule fois
+                    premiere_ouverture = 0;
+                } else {
+                    openImageFile(cheminSauvegarde); // ouvre l’image modifiée ensuite
+                }
+                break;
+            }
+            case 10: {
+                bmp24_free(img);
+                img = bmp24_copyImage(img_original);
+                bmp24_saveImage(img, cheminSauvegarde);
+                openImageFile(cheminSauvegarde);
+                printf("Image restaurée et sauvegardée dans %s.\n", cheminSauvegarde);
+                break;
+            }
+
             case 0:
                 printf("Fermeture du programme.\n");
                 break;
@@ -132,5 +160,4 @@ int main() {
     bmp24_free(img);
     return 0;
 
-    return 0;
 }

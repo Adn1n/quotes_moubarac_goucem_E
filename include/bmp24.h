@@ -109,6 +109,7 @@ void bmp24_threshold(t_bmp24 * img, int threshold);
 
 t_pixel bmp24_convolution(t_bmp24 *img, int x, int y, float **kernel, int kernelSize);
 
+t_bmp24 *bmp24_copyImage(t_bmp24 *src);
 
 void bmp24_printInfo(t_bmp24 *img);
 

@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/filters.c" "CMakeFiles/main.dir/filters.c.o" "gcc" "CMakeFiles/main.dir/filters.c.o.d"
   "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/main.c" "CMakeFiles/main.dir/main.c.o" "gcc" "CMakeFiles/main.dir/main.c.o.d"
   "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/src/bmp24.c" "CMakeFiles/main.dir/src/bmp24.c.o" "gcc" "CMakeFiles/main.dir/src/bmp24.c.o.d"
   "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/src/bmp8.c" "CMakeFiles/main.dir/src/bmp8.c.o" "gcc" "CMakeFiles/main.dir/src/bmp8.c.o.d"
+  "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/src/histogramme.c" "CMakeFiles/main.dir/src/histogramme.c.o" "gcc" "CMakeFiles/main.dir/src/histogramme.c.o.d"
   "/Users/adnan/CLionProjects/quotes_moubarac_goucem_E/utils.c" "CMakeFiles/main.dir/utils.c.o" "gcc" "CMakeFiles/main.dir/utils.c.o.d"
   )
 

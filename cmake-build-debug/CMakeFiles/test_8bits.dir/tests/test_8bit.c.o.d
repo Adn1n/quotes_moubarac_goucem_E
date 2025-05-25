@@ -84,4 +84,6 @@ CMakeFiles/test_8bits.dir/tests/test_8bit.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/_types/_dev_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/_types/_mode_t.h \
   /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/include/bmp8.h \
-  /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/include/utils.h
+  /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/include/utils.h \
+  /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/include/histogramme.h \
+  /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/include/bmp24.h
