@@ -178,7 +178,7 @@ int main(void) {
                 printf("Image sauvegardée.\n");
                 break;
             }
-            case 8:{
+            case 8:
                 // Ouvre l'image (originale ou modifiée)
                 if (premiere_ouverture) {
                     openImageFile(chemin); // ouvre l’image originale une seule fois
@@ -186,13 +186,13 @@ int main(void) {
                 } else {
                     openImageFile(cheminSauvegarde); // ouvre l’image modifiée ensuite
                 }
-            }
+                break;
+
             case 9: {
                 // Restaure l'image originale
                 bmp8_free(img);
                 img = bmp8_copyImage(img_original);
                 bmp8_saveImage(cheminSauvegarde, img);
-                openImageFile(cheminSauvegarde);
                 printf("Image restaurée et sauvegardée dans %s.\n", cheminSauvegarde);
                 break;
             }
@@ -220,9 +220,8 @@ int main(void) {
             printf("Erreur lors du chargement de l'image bmp24.\n");
             return 1;
         }
-        t_bmp8 *img_original = NULL;
-        // Copie de l'image originale pour pouvoir la restaurer plus tard
-        img_original = bmp8_copyImage(img);
+        t_bmp24 *img_original = NULL;
+        img_original = bmp24_copyImage(img);
         // Sert à contrôler si l'image originale doit être ouverte une seule fois
         int premiere_ouverture = 1;
         int choix;
