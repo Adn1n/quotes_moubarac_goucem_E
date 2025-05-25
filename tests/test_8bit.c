@@ -10,9 +10,7 @@
 
 int main(void) {
 
-   char chemin[100];
-    printf("Entrez le nom de l'image BMP à charger : ");
-    scanf("%s", chemin);
+    char chemin[] = "images/barbara_gray.bmp" ;
 
     t_bmp8 *img = bmp8_loadImage(chemin);
     char cheminSauvegarde[100] = "images/image_modifiee.bmp";
@@ -28,7 +26,6 @@ int main(void) {
         printf("2. Appliquer un filtre négatif\n");
         printf("3. Modifier la luminosité\n");
         printf("4. Appliquer un seuillage\n");
-        printf("5. Appliquer un filtre de convolution\n");
         printf("6. Sauvegarder l'image\n");
         printf("7. Ouvrir l'image\n");
         printf("0. Quitter\n");
@@ -42,6 +39,7 @@ int main(void) {
             case 2:
                 bmp8_negative(img);
                 bmp8_saveImage(cheminSauvegarde, img);
+                openImageFile(cheminSauvegarde);
                 printf("Filtre négatif appliqué et sauvegardé dans %s.\n", cheminSauvegarde);
                 break;
             case 3: {
@@ -50,6 +48,7 @@ int main(void) {
                 scanf("%d", &val);
                 bmp8_brightness(img, val);
                 bmp8_saveImage(cheminSauvegarde, img);
+                openImageFile(cheminSauvegarde);
                 printf("Luminosité modifiée et image sauvegardée dans %s.\n", cheminSauvegarde);
                 break;
             }
@@ -59,20 +58,23 @@ int main(void) {
                 scanf("%d", &seuil);
                 bmp8_threshold(img, seuil);
                 bmp8_saveImage(cheminSauvegarde, img);
+                openImageFile(cheminSauvegarde);
                 printf("Seuillage appliqué et image sauvegardée dans %s.\n", cheminSauvegarde);
                 break;
             }
             case 5: {
                 FilterType type;
-                type = choixFilter(type); // Ton menu de filtre existant
-                int taille;
-                float **kernel = getKernel(type, &taille);
+                type = choixFilter(type); // Menu de filtre
+                int taille = 3;
+                float **kernel = getKernel(type);
                 if (kernel != NULL) {
                     bmp8_applyFilter(img, kernel, taille);
                     bmp8_saveImage(cheminSauvegarde, img);
+                    openImageFile(cheminSauvegarde);
                     printf("Filtre de convolution appliqué et sauvegardé dans %s.\n", cheminSauvegarde);
                     // Libère kernel
-                    for (int i = 0; i < taille; i++) free(kernel[i]);
+                    for (int i = 0; i < taille; i++)
+                        free(kernel[i]);
                     free(kernel);
                 }
                 break;
@@ -98,9 +100,5 @@ int main(void) {
     } while (choix != 0);
 
     bmp8_free(img);
-    return 0;
-
-
-
     return 0;
 }

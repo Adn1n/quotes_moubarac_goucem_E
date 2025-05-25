@@ -155,6 +155,30 @@ test_24bits/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_24bits.dir/build.make CMakeFiles/test_24bits.dir/build
 .PHONY : test_24bits/fast
 
+filters.o: filters.c.o
+.PHONY : filters.o
+
+# target to build an object file
+filters.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/filters.c.o
+.PHONY : filters.c.o
+
+filters.i: filters.c.i
+.PHONY : filters.i
+
+# target to preprocess a source file
+filters.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/filters.c.i
+.PHONY : filters.c.i
+
+filters.s: filters.c.s
+.PHONY : filters.s
+
+# target to generate assembly for a file
+filters.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/filters.c.s
+.PHONY : filters.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -322,6 +346,9 @@ help:
 	@echo "... main"
 	@echo "... test_24bits"
 	@echo "... test_8bits"
+	@echo "... filters.o"
+	@echo "... filters.i"
+	@echo "... filters.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

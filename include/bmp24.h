@@ -32,7 +32,7 @@
 
 
 // Définitions des structures//
-typedef struct {
+typedef struct __attribute__((__packed__)) {
     uint16_t type;
     uint32_t size;
     uint16_t reserved1;
@@ -40,7 +40,7 @@ typedef struct {
     uint32_t offset;
 } t_bmp_header;
 
-typedef struct {
+typedef struct __attribute__((__packed__)) {
     uint32_t size;
     int32_t width;
     int32_t height;
@@ -53,6 +53,7 @@ typedef struct {
     uint32_t ncolors;
     uint32_t importantcolors;
 } t_bmp_info;
+
 
 typedef struct {
     uint8_t red;
@@ -81,20 +82,36 @@ t_bmp24 * bmp24_allocate (int width, int height, int colorDepth);
 
 void bmp24_free (t_bmp24 * img);
 
+void file_rawRead (uint32_t position, void * buffer, uint32_t size, size_t n, FILE * file);
+
+void file_rawWrite (uint32_t position, void * buffer, uint32_t size, size_t n, FILE * file);
 
 
 t_bmp24 * bmp24_loadImage (const char * filename);
 
 void bmp24_saveImage (t_bmp24 * img, const char * filename);
 
-void file_rawRead (uint32_t position, void * buffer, uint32_t size, size_t n, FILE * file);
-
-void file_rawWrite (uint32_t position, void * buffer, uint32_t size, size_t n, FILE * file);
-
 void bmp24_readPixelValue (t_bmp24 * image, int x, int y, FILE * file);
+
 void bmp24_readPixelData (t_bmp24 * image, FILE * file);
+
 void bmp24_writePixelValue (t_bmp24 * image, int x, int y, FILE * file);
+
 void bmp24_writePixelData (t_bmp24 * image, FILE * file);
+
+void bmp24_negative (t_bmp24 * img);
+
+void bmp24_grayscale (t_bmp24 * img);
+
+void bmp24_brightness (t_bmp24 * img, int value);
+
+void bmp24_threshold(t_bmp24 * img, int threshold);
+
+t_pixel bmp24_convolution(t_bmp24 *img, int x, int y, float **kernel, int kernelSize);
+
+
+void bmp24_printInfo(t_bmp24 *img);
+
 
 
 #endif //BMP24_H

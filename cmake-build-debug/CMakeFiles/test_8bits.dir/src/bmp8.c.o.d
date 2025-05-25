@@ -1,6 +1,7 @@
 CMakeFiles/test_8bits.dir/src/bmp8.c.o: \
   /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/src/bmp8.c \
   /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/include/bmp8.h \
+  /Users/adnan/CLionProjects/quotes_moubarac_goucem_E/include/utils.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/_stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/sys/cdefs.h \

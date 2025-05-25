@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/main.dir/filters.c.o"
+  "CMakeFiles/main.dir/filters.c.o.d"
   "CMakeFiles/main.dir/main.c.o"
   "CMakeFiles/main.dir/main.c.o.d"
   "CMakeFiles/main.dir/src/bmp24.c.o"

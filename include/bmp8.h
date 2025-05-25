@@ -22,14 +22,7 @@ typedef struct {
 } t_bmp8;
 
 
-// Définitions des Énumérations //
-typedef enum {
-    box_blur = 1,
-    gaussian_blur = 2,
-    outline = 3,
-    emboss = 4,
-    sharpen = 5
-} FilterType;
+
 
 
 /// Prototypes des fonctions //
@@ -48,9 +41,6 @@ void bmp8_brightness(t_bmp8 * img, int value);
 
 void bmp8_threshold(t_bmp8 * img, int threshold);
 
-int choixFilter(FilterType type);
-
-float ** getKernel(FilterType type, int * kernelSize);
 
 void bmp8_applyFilter(t_bmp8 * img, float ** kernel, int kernelSize);
 
