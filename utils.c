@@ -28,8 +28,12 @@ void openImageFile(const char *filename) {
 #endif
 }
 
+// Fonction qui permet à l'utilisateur de choisir un filtre de convolution
+// via un menu interactif avec validation de saisie.
 // Permet à l'utilisateur de choisir un type de filtre parmi une liste et retourne le type choisi.
 int choixFilter(FilterType type){
+
+    // Boucle de saisie utilisateur jusqu'à obtention d'une entrée valide
     char input[50];            // Stocke la saisie utilisateur
     bool verif_saisie = false; // Indique si la saisie est valide
 
@@ -49,23 +53,27 @@ int choixFilter(FilterType type){
         // Supprime le retour à la ligne éventuel
         input[strcspn(input, "\n")] = 0;
 
-        // Vérifie la saisie pour chaque filtre possible
+        // Si l'utilisateur entre "box_blur" ou "1"
         if (strcmp(input, "box_blur") == 0  || strcmp(input, "1") == 0 || strcmp(input, "1.box_blur") == 0 ){
             type = box_blur;
             verif_saisie = true;
         }
+        // Si l'utilisateur entre "gaussian_blur" ou "2"
         else if (strcmp(input,"gaussian_blur") == 0 || strcmp(input,"2") == 0 || strcmp(input,"2.gaussian_blur") == 0 ) {
             type = gaussian_blur;
             verif_saisie = true;
         }
+        // Si l'utilisateur entre "outline" ou "3"
         else if (strcmp(input,"outline") == 0 || strcmp(input,"3") == 0 || strcmp(input,"3.outline") == 0 ) {
             type = outline;
             verif_saisie = true;
         }
+        // Si l'utilisateur entre "emboss" ou "4"
         else if (strcmp(input,"emboss") == 0 || strcmp(input,"4") == 0 || strcmp(input,"4.emboss") == 0 ) {
             type = emboss;
             verif_saisie = true;
         }
+        // Si l'utilisateur entre "sharpen" ou "5"
         else if ( strcmp(input,"sharpen") == 0 || strcmp(input,"5") == 0  || strcmp(input,"5.sharpen")==0) {
             type = sharpen;
             verif_saisie = true;
@@ -81,7 +89,7 @@ int choixFilter(FilterType type){
         }
     }while (!verif_saisie);
 
-    // Retourne le type de filtre choisi
+    // Retourne le filtre sélectionné
     return type;
 }
 
@@ -102,7 +110,6 @@ float ** getKernel(FilterType type){
     // Remplit le noyau selon le type de filtre choisi
     switch (type) {
         case box_blur: {
-            // Noyau de flou moyen (chaque valeur = 1/9)
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                     kernel[i][j] = 1.0 / 9.0;
@@ -111,7 +118,6 @@ float ** getKernel(FilterType type){
             break;
         }
         case gaussian_blur: {
-            // Noyau de flou gaussien
             float values[3][3] = {
                 {1.0, 2.0, 1.0},
                 {2.0, 4.0, 2.0},
@@ -125,7 +131,6 @@ float ** getKernel(FilterType type){
             break;
         }
         case outline: {
-            // Noyau de détection de contours
             float values[3][3] = {
                 {-1,-1,-1},
                 {-1,8,-1},
@@ -139,7 +144,6 @@ float ** getKernel(FilterType type){
             break;
         }
         case emboss: {
-            // Noyau de relief (emboss)
             float values[3][3] = {
                 {-2,-1,0},
                 {-1,1,1},
@@ -153,7 +157,6 @@ float ** getKernel(FilterType type){
             break;
         }
         case sharpen: {
-            // Noyau de renforcement (sharpen)
             float values[3][3] = {
                 {0,-1,0},
                 {-1,5,-1},
@@ -174,5 +177,4 @@ float ** getKernel(FilterType type){
     // Retourne le noyau de convolution
     return kernel;
 }
-
 

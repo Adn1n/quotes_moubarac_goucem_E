@@ -1,4 +1,3 @@
-
 #include "utils.h"
 #include "histogramme.h"
 #include "bmp24.h"
@@ -8,13 +7,14 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Programme principal permettant le traitement d'images BMP en 8 bits et 24 bits.
+// Selon le type d'image, il propose un menu adapté pour appliquer divers filtres, transformations, et égalisation.
 
 int main(void) {
 
     char chemin1[] = "images/barbara_gray.bmp" ;
     char chemin2[] = "images/flowers_color.bmp" ;
     char cheminSauvegarde[100] = "images/image_bmp8_modifiee.bmp";
-    char cheminSauvegarde1[100] = "images/image_bmp24_modifiee.bmp";
 
     int choix = 0;
     char chemin[100];
@@ -33,6 +33,7 @@ int main(void) {
 
     if (choix == 1) {
         strcpy(chemin, chemin1);
+        // Charge une image en niveaux de gris (BMP 8 bits)
         t_bmp8 *img = bmp8_loadImage(chemin);
         if (!img) {
             printf("Erreur lors du chargement de l'image bmp8.\n");
@@ -56,14 +57,18 @@ int main(void) {
         scanf("%d", &choix);
 
         t_bmp8 *img_original = NULL;
+        // Copie de l'image originale pour pouvoir la restaurer plus tard
         img_original = bmp8_copyImage(img);
+        // Sert à contrôler si l'image originale doit être ouverte une seule fois
         int premiere_ouverture = 1;
 
         switch (choix) {
             case 1:
+                // Affiche les informations de l'image
                 bmp8_printInfo(img);
                 break;
             case 2:
+                // Applique un filtre négatif
                 bmp8_negative(img);
                 bmp8_saveImage(cheminSauvegarde, img);
                 openImageFile(cheminSauvegarde);
@@ -71,6 +76,7 @@ int main(void) {
                 premiere_ouverture = 0;
                 break;
             case 3: {
+                // Modifie la luminosité
                 int val;
                 printf("Entrez une valeur de luminosité (-255 à 255) : ");
                 scanf("%d", &val);
@@ -82,6 +88,7 @@ int main(void) {
                 break;
             }
             case 4: {
+                // Applique un seuillage
                 int seuil;
                 printf("Entrez le seuil (0 à 255) : ");
                 scanf("%d", &seuil);
@@ -93,6 +100,7 @@ int main(void) {
                 break;
             }
             case 5: {
+                // Applique un filtre de convolution
                 FilterType type;
                 type = choixFilter(type); // Menu de filtre
                 int taille = 3;
@@ -111,6 +119,7 @@ int main(void) {
                 break;
             }
             case 6: {
+                // Applique une égalisation d'histogramme
                 unsigned int *hist = bmp8_computeHistogram(img);
                 if (!hist) {
                     printf("Erreur lors du calcul de l'histogramme.\n");
@@ -161,6 +170,7 @@ int main(void) {
                 break;
             }
             case 7: {
+                // Sauvegarde l'image modifiée
                 char savePath[100];
                 printf("Nom du fichier de sortie : ");
                 scanf("%s", savePath);
@@ -169,6 +179,7 @@ int main(void) {
                 break;
             }
             case 8:{
+                // Ouvre l'image (originale ou modifiée)
                 if (premiere_ouverture) {
                     openImageFile(chemin); // ouvre l’image originale une seule fois
                     premiere_ouverture = 0;
@@ -177,6 +188,7 @@ int main(void) {
                 }
             }
             case 9: {
+                // Restaure l'image originale
                 bmp8_free(img);
                 img = bmp8_copyImage(img_original);
                 bmp8_saveImage(cheminSauvegarde, img);
@@ -185,27 +197,33 @@ int main(void) {
                 break;
             }
             case 0:
+                // Quitte le programme
                 printf("Fermeture du programme.\n");
                 break;
             default:
+                // Gère les choix invalides
                 printf("Choix invalide. Veuillez réessayer.\n");
         }
 
     } while (choix != 0);
         // Appelle ici menu_bmp8(img);
+        // Libère la mémoire allouée à l'image avant de quitter
         bmp8_free(img);
 
 
 
     } else {
         strcpy(chemin, chemin2);
+        // Charge une image couleur (BMP 24 bits)
         t_bmp24 *img = bmp24_loadImage(chemin);
         if (!img) {
             printf("Erreur lors du chargement de l'image bmp24.\n");
             return 1;
         }
         t_bmp8 *img_original = NULL;
+        // Copie de l'image originale pour pouvoir la restaurer plus tard
         img_original = bmp8_copyImage(img);
+        // Sert à contrôler si l'image originale doit être ouverte une seule fois
         int premiere_ouverture = 1;
         int choix;
     do {
@@ -226,9 +244,11 @@ int main(void) {
 
         switch (choix) {
             case 1:
+                // Affiche les informations de l'image
                 bmp24_printInfo(img);
                 break;
             case 2:
+                // Applique un filtre négatif
                 bmp24_free(img);
                 img = bmp24_loadImage(chemin);
                 bmp24_negative(img);
@@ -238,6 +258,7 @@ int main(void) {
                 break;
 
             case 3: {
+                // Modifie la luminosité
                 int val;
                 printf("Entrez une valeur de luminosité (-255 à 255) : ");
                 scanf("%d", &val);
@@ -248,6 +269,7 @@ int main(void) {
                 break;
             }
             case 4: {
+                // Applique un seuillage
                 int seuil;
                 printf("Valeur de seuillage (0-255) : ");
                 scanf("%d", &seuil);
@@ -258,15 +280,16 @@ int main(void) {
                 break;
             }
             case 5 : {
-            bmp24_grayscale(img);
-            bmp24_saveImage(img, cheminSauvegarde);
-            openImageFile(cheminSauvegarde);
-            printf("Filtre niveaux de gris appliqué et image sauvegardée dans %s.\n", cheminSauvegarde);
-            break;
+                // Convertit l'image couleur en niveaux de gris
+                bmp24_grayscale(img);
+                bmp24_saveImage(img, cheminSauvegarde);
+                openImageFile(cheminSauvegarde);
+                printf("Filtre niveaux de gris appliqué et image sauvegardée dans %s.\n", cheminSauvegarde);
+                break;
             }
 
             case 6: {
-
+                // Applique un filtre de convolution
                 FilterType type;
                 type = choixFilter(type); // Demande à l'utilisateur quel filtre appliquer
                 int taille = 3;
@@ -303,12 +326,14 @@ int main(void) {
                 break;
             }
             case 7:
+                // Applique une égalisation d'histogramme
                 bmp24_equalize(img);
                 bmp24_saveImage(img, cheminSauvegarde);
                 openImageFile(cheminSauvegarde);
                 printf("Image 24 bits égalisée.\n");
                 break;
             case 8 : {
+                // Sauvegarde l'image
                 char savePath[100];
                 printf("Nom du fichier de sortie : ");
                 scanf("%s", savePath);
@@ -317,6 +342,7 @@ int main(void) {
                 break;
             }
             case 9 : {
+                // Ouvre l'image (originale ou modifiée)
                 if (premiere_ouverture) {
                     openImageFile(chemin); // ouvre l’image originale une seule fois
                     premiere_ouverture = 0;
@@ -326,6 +352,7 @@ int main(void) {
                 break;
             }
             case 10: {
+                // Restaure l'image originale
                 bmp24_free(img);
                 img = bmp24_copyImage(img_original);
                 bmp24_saveImage(img, cheminSauvegarde);
@@ -335,23 +362,22 @@ int main(void) {
             }
 
             case 0:
+                // Quitte le programme
                 printf("Fermeture du programme.\n");
                 break;
             default:
+                // Gère les choix invalides
                 printf("Choix invalide. Veuillez réessayer.\n");
         }
 
     } while (choix != 0);
 
+    // Libère la mémoire allouée à l'image avant de quitter
     bmp24_free(img);
+        // Libère la mémoire allouée à l'image avant de quitter
         bmp24_free(img);
     }
 
 
     return 0;
 }
-
-
-
-
-

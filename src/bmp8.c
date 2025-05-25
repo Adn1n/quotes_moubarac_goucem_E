@@ -47,7 +47,7 @@ t_bmp8 * bmp8_loadImage(const char * filename) {
         p_img->dataSize = p_img->width * p_img->height;
     }
 
-    // Lit la table de couleurs (palette) de 1024 octets
+    // Lit la table de couleurs de 1024 octets
     fread(p_img->colorTable, sizeof(unsigned char), 1024, file);
 
     // Alloue la mémoire pour les données de l'image

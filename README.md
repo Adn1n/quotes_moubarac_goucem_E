@@ -86,6 +86,26 @@ La rigueur imposée par le format BMP et la gestion manuelle des pixels ont perm
 
 Enfin, le projet a servi de tremplin pour réfléchir à des extensions plus ambitieuses  et se projeter vers une application plus complète et accessible.
 
+## 8. Compilation et exécution
+
+### Prérequis :
+- Un compilateur C
+- CMake (si vous utilisez CLion ou un autre IDE CMake-based)
+- CLion (optionnel mais recommandé)
+
+## 9. Bugs connus
+
+- Certaines images BMP mal formatées peuvent provoquer une erreur lors du chargement.
+
+## 10. Compatibilité multiplateforme
+
+Grâce à la fonction `openImageFile()`, le programme est compatible avec les systèmes Windows, macOS et Linux. L’ouverture automatique d’image s’adapte selon le système d’exploitation détecté.
+
+## 11. Dépôt Git
+
+Lien du dépôt Git : https://github.com/Adn1n/quotes_moubarac_goucem_E
+
+
 
 
 
