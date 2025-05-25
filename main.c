@@ -373,8 +373,7 @@ int main(void) {
 
     // Libère la mémoire allouée à l'image avant de quitter
     bmp24_free(img);
-        // Libère la mémoire allouée à l'image avant de quitter
-        bmp24_free(img);
+
     }
 
 
